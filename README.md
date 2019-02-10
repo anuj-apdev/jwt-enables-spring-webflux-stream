@@ -32,7 +32,7 @@ send request to {URL}/token
 You will get back a JWT Token
  - Example request
  ```jshelllanguage
-token=curl -X POST -H "Content-Type: application/json" -d '{"user":"anuj", "id":"12345", "role":"adm"}' "http://localhost:8082/token"
+token=$(curl -X POST -H "Content-Type: application/json" -d '{"user":"anuj", "id":"12345", "role":"adm"}' "http://localhost:8082/token")
 ```
 
 ### How to use Token?
@@ -44,6 +44,8 @@ Send any request to /rest/class/all with Following Header
 
 ```sh
 curl  -H "Authorisation: Token $token" "http://localhost:8082/rest/class/all"
+
+To get the Live Event Stream, use below endpoint (Note: use id from output of above command) --> 
 curl  -H "Authorisation: Token $token" "http://localhost:8082/rest/class/53279d19-5c6f-4988-8b43-9d5d3c68be6d/events
 ```
 
