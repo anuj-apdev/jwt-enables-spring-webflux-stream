@@ -5,8 +5,7 @@
 
 ### - Make sure to start mongodb at 27017 port.
 
-```
-sh
+```sh
 docker run -p 27017:27017 -d mongo
 ```
 
@@ -38,16 +37,14 @@ token=$(curl -X POST -H "Content-Type: application/json" -d '{"user":"anuj", "id
 ### How to use Token?
 
 ```
-sh
 Send any request to /rest/class/all with Following Header
 "Authorisation": "Token <Token>"
 ```
 
-```
-sh
+```sh
 curl  -H "Authorisation: Token $token" "http://localhost:8082/rest/class/all"
 
-To get the Live Event Stream, use below endpoint (Note: use id from output of above command) --> 
+# To get the Live Event Stream, use below endpoint (Note: use id from output of above command) --> 
 curl  -H "Authorisation: Token $token" "http://localhost:8082/rest/class/53279d19-5c6f-4988-8b43-9d5d3c68be6d/events
 ```
 
