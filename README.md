@@ -37,12 +37,14 @@ token=$(curl -X POST -H "Content-Type: application/json" -d '{"user":"anuj", "id
 
 ### How to use Token?
 
-```$xslt
+```
+sh
 Send any request to /rest/class/all with Following Header
 "Authorisation": "Token <Token>"
 ```
 
-```sh
+```
+sh
 curl  -H "Authorisation: Token $token" "http://localhost:8082/rest/class/all"
 
 To get the Live Event Stream, use below endpoint (Note: use id from output of above command) --> 
